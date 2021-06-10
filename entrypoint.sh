@@ -99,11 +99,16 @@ ${output}
 }
 
 function main(){
+	echo "Parse inputs"
 	parseInputs
 	cd ${GITHUB_WORKSPACE}/${INPUT_WORKING_DIR}
+	echo "Install Typescript"
 	installTypescript
+	echo "Install CDK"
 	installAwsCdk
+	echo "Install PIP"
 	installPipRequirements
+	echo "Run CDK"
 	runCdk ${INPUT_CDK_ARGS}
 }
 
