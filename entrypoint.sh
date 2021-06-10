@@ -61,13 +61,11 @@ function installPipRequirements(){
 }
 
 function runCdk(){
-	echo "Checking access token"
 	echo "${CDK_GITHUB_ACCESS_TOKEN}"
 	if [ -n "${CDK_GITHUB_ACCESS_TOKEN}" ]; then
 		echo "Setting CDK Access Token"
 		git config --global url."https://${CDK_GITHUB_ACCESS_TOKEN}@github.com/".insteadOf  https://github.com/
 		npm i
-		echo "NPM install finished"
 	fi
 	echo "Run cdk ${INPUT_CDK_SUBCOMMAND} ${*} \"${INPUT_CDK_STACK}\""
 	output=$(cdk ${INPUT_CDK_SUBCOMMAND} ${*} "${INPUT_CDK_STACK}" 2>&1)
