@@ -61,7 +61,6 @@ function installPipRequirements(){
 }
 
 function runCdk(){
-	echo "${CDK_GITHUB_ACCESS_TOKEN}"
 	if [ -n "${CDK_GITHUB_ACCESS_TOKEN}" ]; then
 		echo "Setting CDK Access Token"
 		git config --global url."https://${CDK_GITHUB_ACCESS_TOKEN}@github.com/".insteadOf  https://github.com/
